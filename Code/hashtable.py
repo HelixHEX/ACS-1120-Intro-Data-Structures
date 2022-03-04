@@ -92,8 +92,8 @@ class HashTable(object):
         # Hint: raise KeyError('Key not found: {}'.format(key))
         index = self._bucket_index(key)
         bucket = self.buckets[index]
-        for key, value in bucket.items():
-            if key == key:
+        for key2, value in bucket.items():
+            if key2 == key:
                 return value
         raise KeyError('Key not found: {}'.format(key))
         
