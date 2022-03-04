@@ -16,12 +16,13 @@ class Listogram(list):
         # Count words in given list, if any
         if word_list is not None:
             word_list.sort()
-            for word in word_list:
+            for index, word in enumerate(word_list):
                 if self.types != 0 and self[self.types-1][0] == word:
                     self[self.types-1][1] += 1
+                    self[self.types-1][2].append(index)
                     self.tokens += 1
                 else:
-                    self.append([word, 1])
+                    self.append([word, 1, [index]])
                     self.types += 1
                     self.tokens += 1
  
@@ -73,7 +74,7 @@ class Listogram(list):
         for word_list in self:
             index += word_list[1]
             if index >= ranum:
-                return word_list[0]
+                return word_list
 
 
 def print_histogram(word_list):
@@ -126,6 +127,7 @@ def print_histogram_samples(histogram):
     print(divider)
     print()
 
+    
 
 def main():
     import sys
