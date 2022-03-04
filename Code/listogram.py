@@ -14,6 +14,7 @@ class Listogram(list):
         self.types = 0  # Count of distinct word types in this histogram
         self.tokens = 0  # Total count of all word tokens in this histogram
         # Count words in given list, if any
+        
         if word_list is not None:
             word_list.sort()
             for index, word in enumerate(word_list):
