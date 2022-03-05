@@ -13,6 +13,7 @@ def remove_punctuation(text):
     no_punc_text = re.sub('[,.()…]', '', text)
     no_punc_text = re.sub('-', ' ', no_punc_text)
     no_punc_text = re.sub('--', ' ', no_punc_text)
+    # no_punc_text = re.sub('/(\b[A-Z][A-Z]+|\b[A-Z]\b)/g', '', no_punc_text)
     return no_punc_text
 
 if __name__ == '__main__':

@@ -22,7 +22,7 @@ class Markov_Chain():
         self.markov_chain[pair] = Dictogram()
       self.markov_chain[pair].add_count(tokens[index+2])
 
-  def walk(self, length=15) -> str:
+  def walk(self, length=20) -> str:
     sentence = ""
     pair = self.hist.sample()
     sentence += f"{pair[0]} {pair[1]} "
